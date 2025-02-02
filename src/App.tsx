@@ -8,10 +8,12 @@ import { motion } from 'framer-motion'
 function App() {
   return (
     <>
-      <motion.dev className="box" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+      <motion.div className="box" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <Card />
-      </motion.dev>
-      <p>test</p>
+        <Card />
+        <Card />
+        <Card />
+      </motion.div>
     </>
   )
 }
