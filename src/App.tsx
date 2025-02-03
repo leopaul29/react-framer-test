@@ -1,19 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Card from './components/Card'
-import { motion } from 'framer-motion'
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Home from './pages/Home'
+import Gallery from './pages/Gallery'
+
 
 function App() {
   return (
     <>
-      <motion.div className="box" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </motion.div>
+      <h1 className="text-4xl font-bold text-blue-600">
+
+        React Framer tests</h1>
+      <Router>
+        <nav>
+          <ul>
+            <li><Link to="/home">Home</Link></li>
+            <li><Link to="/gallery">Gallery</Link></li>
+          </ul>
+        </nav>
+        <main>
+          <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/gallery" element={<Gallery />} />
+          </Routes>
+        </main>
+      </Router>
     </>
   )
 }
